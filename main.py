@@ -3,12 +3,15 @@ import store
 
 
 def start(store_instance):
+    """
+    Starts the Best Buy user interface.
+    """
     while True:
-        print("\n--- Welcome to Best Buy ---")
-        print("1. List all products in store")
-        print("2. Show total amount in store")
-        print("3. Make an order")
-        print("4. Quit")
+        print((f"\n--- Welcome to Best Buy ---"
+               "1. List all products in store"
+               "2. Show total amount in store"
+               "3. Make an order"
+               "4. Quit"))
 
         choice = input("Enter your choice (1-4): ").strip()
 
@@ -58,8 +61,6 @@ def start(store_instance):
                 print(f"\n✅ Order placed successfully! Total cost: ${total_price}")
             except ValueError:
                 print("❌ Please enter a valid number.")
-            except Exception as e:
-                print(f"❌ Order failed: {e}")
 
         elif choice == "4":
             print("👋 Thank you for shopping with us!")
