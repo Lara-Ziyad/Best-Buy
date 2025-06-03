@@ -24,7 +24,7 @@ class Product:
         """Returns the current quantity."""
         return self.quantity
 
-    def set_quantity(self, quantity)
+    def set_quantity(self, quantity):
         """Sets a new quantity and deactivates the product if it reaches 0."""
 
         if quantity < 0:
