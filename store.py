@@ -44,8 +44,10 @@ class Store:
         """
         return sum(product.buy(quantity) for product, quantity in shopping_list)
 
+# ---------------------------------------
+# Usage Example
+# ---------------------------------------
 
-# Example usage (for testing)
 if __name__ == "__main__":
     product_list = [
         Product("MacBook Air M2", price=1450, quantity=100),

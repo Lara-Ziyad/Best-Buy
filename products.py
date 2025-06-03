@@ -70,8 +70,9 @@ class Product:
 
         return total_price
 
-
-# ---------------------- Usage Example ----------------------
+# ---------------------------------------
+# Usage Example
+# ---------------------------------------
 
 bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
 mac = Product("MacBook Air M2", price=1450, quantity=100)
