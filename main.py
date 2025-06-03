@@ -57,8 +57,8 @@ def start(store_instance):
                     continue
                 shopping_list.append((selected_product, quantity))
                 total_price = store_instance.order(shopping_list)
-                print(f"✔️ '{selected_product.name}' added to the list.")
-                print(f"\n✅ Order placed successfully! Total cost: ${total_price}")
+                print((f"✔️ '{selected_product.name}' added to the list."
+                       f"\n✅ Order placed successfully! Total cost: ${total_price}"))
             except ValueError:
                 print("❌ Please enter a valid number.")
 

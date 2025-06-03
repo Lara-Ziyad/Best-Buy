@@ -1,4 +1,4 @@
-from products import Product  # Make sure products.py is in the same folder
+from products import Product
 
 
 class Store:
@@ -57,9 +57,7 @@ if __name__ == "__main__":
 
     best_buy = Store(product_list)
 
-    print("All active products:")
-    for p in best_buy.get_all_products():
-        print(p.show())
+    print("All active products:", *[p.show() for p in best_buy.get_all_products()], sep="\n")
 
     print("\nTotal quantity in store:", best_buy.get_total_quantity())
 
