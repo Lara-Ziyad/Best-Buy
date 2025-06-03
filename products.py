@@ -37,11 +37,11 @@ class Product:
     def buy(self, quantity) -> float:
 
         if not self.active:
-            raise Exception("Product is not active.")
+            raise RuntimeError ("Product is not active.")
         if quantity <= 0:
             raise ValueError("Quantity to buy must be greater than 0.")
         if quantity > self.quantity:
-            raise Exception("Not enough quantity in stock.")
+            raise RuntimeError("Not enough quantity in stock.")
 
         total_price = quantity * self.price
         self.quantity -= quantity
