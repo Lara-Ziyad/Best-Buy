@@ -24,31 +24,29 @@ def main():
     # Create store instance with product list
     best_buy = store.Store(product_list)
 
+    # Define the dispatcher dictionary
+    dispatcher = {
+        "1": lambda: show_store_products(best_buy.get_all_products()),
+        "2": lambda: show_store_quantity(best_buy.get_total_quantity()),
+        "3": lambda: make_order(best_buy),
+    }
+
     # Main menu loop
     while True:
         show_option_list(option_list)
 
         choice = input("Enter your choice (1-4): ").strip()
 
-        if choice == "1":
-            # List all active products
-            show_store_products(best_buy.get_all_products())
-
-        elif choice == "2":
-            # Show total quantity of all products
-            show_store_quantity(best_buy.get_total_quantity())
-
-        elif choice == "3":
-            # Placeholder for "Make an order" (to be implemented)
-            make_order(best_buy)
+        # Use dispatcher to call the corresponding function
+        if choice in dispatcher:
+            dispatcher[choice]()
 
         elif choice == "4":
-            # Exit the application
             print("👋 Thank you for shopping with us!")
             break
 
+        # Handle invalid input
         else:
-            # Handle invalid input
             print("❌ Invalid choice. Please enter a number between 1 and 4.")
 
 

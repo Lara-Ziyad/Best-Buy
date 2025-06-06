@@ -76,6 +76,7 @@ def make_order(products_lst):
 
             shopping_list.append((selected_product, quantity))
             total_price = products_lst.order(shopping_list)
+
             print((f"✔️ '{selected_product.name}' added to the list."
                    f"\n✅ Order placed successfully! Total cost: ${total_price}"))
 
