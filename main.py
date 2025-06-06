@@ -8,10 +8,10 @@ def start(store_instance):
     """
     while True:
         print((f"\n--- Welcome to Best Buy ---"
-               "1. List all products in store"
-               "2. Show total amount in store"
-               "3. Make an order"
-               "4. Quit"))
+               "\n1. List all products in store"
+               "\n2. Show total amount in store"
+               "\n3. Make an order"
+               "\n4. Quit"))
 
         choice = input("Enter your choice (1-4): ").strip()
 
