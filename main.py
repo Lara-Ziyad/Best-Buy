@@ -55,6 +55,9 @@ def start(store_instance):
                 if quantity <= 0:
                     print("❌ Quantity must be greater than 0.")
                     continue
+                if quantity > selected_product.get_quantity():
+                    print(f"❌ Not enough quantity in stock. Available: {selected_product.get_quantity()}")
+                    continue
                 shopping_list.append((selected_product, quantity))
                 total_price = store_instance.order(shopping_list)
                 print((f"✔️ '{selected_product.name}' added to the list."
