@@ -75,10 +75,9 @@ def make_order(products_lst):
                 continue
 
             shopping_list.append((selected_product, quantity))
-            total_price = products_lst.order(shopping_list)
 
-            print((f"✔️ '{selected_product.name}' added to the list."
-                   f"\n✅ Order placed successfully! Total cost: ${total_price}"))
+            print(f"✔️ '{selected_product.name}' added to the list.")
+
 
         except ValueError:
             print("❌ Please enter a valid number.")
@@ -88,7 +87,11 @@ def make_order(products_lst):
         keep_shopping = input("Do you want to buy more products? (Y/N): ").strip().lower()
 
         if keep_shopping == "n":
-            print("🔙 Returning to main menu.")
+            total_price = products_lst.order(shopping_list)
+            print(f"✅ Order placed successfully! Total cost: ${total_price}  ")
+            print("🛒 You bought:")
+            for product, quantity in shopping_list:
+                print(f"- {product.name}: {quantity} unit(s)")
             break
         elif keep_shopping != "y":
             print("❌ Invalid choice. Please enter Y or N.")
