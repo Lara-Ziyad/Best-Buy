@@ -1,6 +1,6 @@
 import products
 import store
-from store_operations import show_option_list, show_store_products,show_store_quantity,make_order
+from store_operations import show_option_list, show_store_products,show_store_quantity, make_order
 
 # The list of menu options for the store (displayed in main menu)
 option_list = (
@@ -28,7 +28,7 @@ def main():
     dispatcher = {
         "1": lambda: show_store_products(best_buy.get_all_products()),
         "2": lambda: show_store_quantity(best_buy.get_total_quantity()),
-        "3": lambda: make_order(best_buy),
+        "3": lambda: make_order(best_buy)
     }
 
     # Main menu loop
